@@ -1,13 +1,14 @@
 pipeline {
     agent any
-    parameters{
-        string(name: 'NAME', defaultValue: 'World', description: 'Person name')
-    }
-
     stages {
         stage('Hello') {
             steps {
-                echo "Hello ${params.NAME}"
+                echo "Hello World"
+            }
+        }
+        stage('List all files') {
+            steps {
+                ls -a
             }
         }
     }
